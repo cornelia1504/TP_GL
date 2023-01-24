@@ -20,7 +20,6 @@ class Animal():
         +"diet : "+ str(self.diet) + "\n"\
         +"Mother : " + str(self.mother) + "\n"\
         + "Children : " + str(self.children) + "\n"\
-        + "Children : " + str(self.children) + "\n"\
         + "Descendent : " + str(self.descendants)
 
 class Cat(Animal):
