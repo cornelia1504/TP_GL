@@ -1,5 +1,7 @@
 #encoding : utf8
-"""Program for creating class"""
+"""Program for creating class Animal
+These animals can have children and parents"""
+
 class Animal():
     """creating class Animal"""
     def __init__(self, species, age, diet, mother) -> None :
