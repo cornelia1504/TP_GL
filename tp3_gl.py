@@ -51,14 +51,13 @@ class Homme(Cat): #Homme descendant of cat
         super().__init__(13,"homme")
         self.name = name
 
-    def __str__(self):
-        """function to print info form Animal() and from Homme()"""
-        return super().__str__() + "\nname : " + self.name
-
 if __name__ == "__main__":
+    animal0 = Animal("animal", 45, "herbivore", "LUCA")
     cat0 = Cat(10, "mimi")
     cat1 = Cat(8, "mich")
     homme0 = Homme("Mitch")
+    print(animal0)
+    print("................................")
     print(cat0)
     print("................................")
     print(cat1)
