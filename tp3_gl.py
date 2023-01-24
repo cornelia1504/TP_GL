@@ -17,21 +17,8 @@ class Animal():
         +"age : " + str(self.age) + "\n" \
         +"diet : "+ str(self.diet) + "\n"\
         +"Mother : " + str(self.mother) + "\n"\
-        + "Descendant : " + str(self.descendants)
+        + "Descendants : " + str(self.descendants)
 
-    def children(self, child):
-        """function to add child to an animal"""
-        if self.descendants[0] is None:
-            self.descendants.remove(None)
-            self.descendants.append(child.name)
-            self.add_mother(child,self)
-            self.children()
-
-    def add_mother(self,child ,mommy):
-        """function to add a mother"""
-        for element in self.children:
-            if element == child.name:
-                child.mother = mommy.name
 class Cat(Animal):
     """class for the species Homme decendant of Animal"""
     def __init__(self, age , name) -> None:
@@ -55,7 +42,7 @@ if __name__ == "__main__":
     animal0 = Animal("animal", 45, "herbivore", "LUCA")
     cat0 = Cat(10, "mimi")
     cat1 = Cat(8, "mich")
-    homme0 = Homme("Mitch")
+    homme0 = Homme("Mitchell")
     print(animal0)
     print("................................")
     print(cat0)
