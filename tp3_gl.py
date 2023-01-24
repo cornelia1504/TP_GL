@@ -10,8 +10,6 @@ class Animal():
         self.age = age
         self.diet = diet
         self.mother = mother
-        self.child_id = [] # contains not understandable id ##
-        self.children = [] # contains names
         self.descendants = []
 
     def __str__(self) -> str:
@@ -19,9 +17,21 @@ class Animal():
         +"age : " + str(self.age) + "\n" \
         +"diet : "+ str(self.diet) + "\n"\
         +"Mother : " + str(self.mother) + "\n"\
-        + "Children : " + str(self.children) + "\n"\
         + "Descendant : " + str(self.descendants)
-
+        
+    def children(self, child):
+        """function to add child to an animal"""
+        if self.descendants[0] is None:
+            self.descendants.remove(None)
+            self.descendants.append(child.name)
+            self.add_mother(child,self)
+            self.children()
+    
+    def add_mother(self,child ,mommy):
+        """function to add a mother"""
+        for element in self.children:
+            if element == child.name:
+                child.mother = mommy.name
 class Cat(Animal):
     """class for the species Homme decendant of Animal"""
     def __init__(self, age , name) -> None:
@@ -56,4 +66,3 @@ if __name__ == "__main__":
     print(homme0)
 
 #TO_DO :  function to add mother, child  and descendents on the lists
-
