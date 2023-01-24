@@ -51,4 +51,4 @@ if __name__ == "__main__":
     print("................................")
     print(homme0)
 
-#TO_DO :  function to add mother, child  and descendents on the lists
+#TO_DO :  function to add child  and descendents on the lists
