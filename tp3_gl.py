@@ -20,7 +20,7 @@ class Animal():
         +"diet : "+ str(self.diet) + "\n"\
         +"Mother : " + str(self.mother) + "\n"\
         + "Children : " + str(self.children) + "\n"\
-        + "Descendent : " + str(self.descendants)
+        + "Descendant : " + str(self.descendants)
 
 class Cat(Animal):
     """class for the species Homme decendant of Animal"""
@@ -36,12 +36,11 @@ class Cat(Animal):
 
 class Homme(Cat): #Homme descendant of cat
     """class for the species Homme"""
-    def __init__(self,name, age) -> None:
+    def __init__(self,name) -> None:
         """init what homme have 'homme' and 'omnivore" """
-        super().__init__("homme", age)
-        self.age = age
+        super().__init__(13,"homme")
         self.name = name
-
+        
     def __str__(self):
         """function to print info form Animal() and from Homme()"""
         return super().__str__() + "\nname : " + self.name
@@ -49,9 +48,12 @@ class Homme(Cat): #Homme descendant of cat
 if __name__ == "__main__":
     cat0 = Cat(10, "mimi")
     cat1 = Cat(8, "mich")
-    homme0 = Homme(38, "Mitch")
+    homme0 = Homme("Mitch")
     print(cat0)
+    print("................................")
     print(cat1)
+    print("................................")
     print(homme0)
 
 #TO_DO :  function to add mother, child  and descendents on the lists
+
