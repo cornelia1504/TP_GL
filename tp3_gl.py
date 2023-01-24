@@ -18,7 +18,7 @@ class Animal():
         +"diet : "+ str(self.diet) + "\n"\
         +"Mother : " + str(self.mother) + "\n"\
         + "Descendant : " + str(self.descendants)
-        
+
     def children(self, child):
         """function to add child to an animal"""
         if self.descendants[0] is None:
@@ -26,7 +26,7 @@ class Animal():
             self.descendants.append(child.name)
             self.add_mother(child,self)
             self.children()
-    
+
     def add_mother(self,child ,mommy):
         """function to add a mother"""
         for element in self.children:
@@ -50,7 +50,7 @@ class Homme(Cat): #Homme descendant of cat
         """init what homme have 'homme' and 'omnivore" """
         super().__init__(13,"homme")
         self.name = name
-        
+
     def __str__(self):
         """function to print info form Animal() and from Homme()"""
         return super().__str__() + "\nname : " + self.name
