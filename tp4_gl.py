@@ -12,6 +12,10 @@ class Binary_tree():
         """ Displays the node and all descendants """
         return self.root.display_node()
 
+    def print_tree_vertical(self):
+        """ Breadth-first traversal of Binary Tree """
+        return self.root.display_node_vertical()
+
 class Node():
     """ Class allowing to create nodes as well as to add nodes to them (left or right) """
     def __init__(self, value):
@@ -64,6 +68,28 @@ class Node():
             retour += self.left.display_node(level+1) #add a left node at each level
         return retour
 
+    def display_node_vertical(self, level=1): #counter at 1 because we want the first node not to start at the beginning of the chain
+        """ Method to display the tree in a "vertical" way"""
+        retour = ""
+        for _ in range(0,level):
+            retour += "\t"
+        retour += str(self)
+        if self.left and self.right:
+            #if the node has descendants in the left node and in the right node
+            retour += "\n"
+            retour += self.left.display_node_vertical(level-1)
+            #we set level-1 so that when displayed, it is placed before its parent node
+            retour += self.right.display_node_vertical(level+1)
+        if self.left and self.right is None:
+            #if the node has only one left node
+            retour += "\n"
+            retour += self.left.display_node_vertical(level+1)
+        if self.left is None and self.right :
+            #if the node has only one right node
+            retour += "\n"
+            retour += self.right.display_node_vertical(level+1)
+        return retour
+
     def __str__(self):
         return str(self.value) + "/" + str(self.depth)
 
@@ -108,6 +134,9 @@ node7.add(node8)
 tree = Binary_tree()
 tree.root= node1
 print("\n")
-print("Binary tree depth-first traversal\n ")
+print("Binary tree depth-first traversal (HORIZONTAL)\n ")
 #print(node1.display_node())
 print(tree.print_tree())
+print("\n")
+print("Binary tree depth-first traversal (VERTICAL)\n ")
+print(tree.print_tree_vertical())
